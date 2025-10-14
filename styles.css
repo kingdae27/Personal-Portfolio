@@ -1,0 +1,588 @@
+    *{ /*everything inside of the "*{}" is applied to the entire program*/
+    margin: 0;
+    padding: 0;
+    font-family: "DM Sans", sans-serif; /* Makes all the font poppins font. I copied the css specifications from google font */
+  }
+  
+  /*Homepage Background*/
+  .header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(./Pictures/new-joint.png); /*the code for the background image of the home page with a black linear gradient*/
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  /*Navigation Bar*/
+  nav{ 
+    display: flex;
+    padding: 1% 6%; /* this adds internal space*/
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav img{
+    width: 80px;
+  }
+  .nav-links{
+    flex: 1;
+    text-align: right;
+  }
+  .nav-links ul li{
+    list-style: none; /* Unsorted lists come with bullet points by default so I specify that the style is "none" to remove them*/
+    display: inline-block; /* Displays it horizontally*/
+    padding: 8px 12px; /* adds some space*/
+    position: relative
+  }
+  .nav-links ul li a{
+    color: #fff; /* changing the color of the hyperlink text to white */
+    text-decoration: none; /* This removes the underline that comes with hyperlink by default */
+    font-size: 13px;
+  }
+  
+  
+  /*Navigation Bar hover effect*/
+  .nav-links ul li::after{ /* The "::after" is a CSS pseudo-element that is used to insert content after the content of an element like an arrow after a word to indicate that it has a dropdown menu or in this case an interactive line under list item */
+    content: '';
+    width: 0%; /* Specifiying that the block should be the FULL width of its respective list item*/
+    height: 2px; /* establishes the height of the block, its serves as an underlining so 2px will suffice*/
+    background: aqua;
+    display: block; /*establishing what to display. a literal block*/
+    margin: auto;
+    transition-duration: 0.5s;
+  }
+  .nav-links ul li:hover::after{ /*The hover pseudo element specifies what happens once i "Hover" over the element with my cursor. In this case the block width goes from 0-100%*/
+    width: 100%;
+  }
+  
+
+
+
+  /*-------------Homepage greeting "Daelen Bows"-------------*/
+
+
+
+  .text-box{
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%; /*Places the text at half halfway from the top, the middle of the y-axis*/
+    left: 50%; /*Places the text halfway from the left, the middle of the x-axis*/
+    transform: translate(-50%, -50%); /*This CSS property is used to reposition an element horizontally/vertically relative to its own dimensions. The translate() function moves the element abour the x and y axes*/
+    text-align: center;
+  }
+  .text-box h1{
+    font-family: 'Azonix', sans-serif;
+    font-size: 115px;
+    font-weight:500;
+  }
+  .text-box p{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: white;
+  }
+  /*Contact Button*/
+  .hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 2px solid aqua;
+    border-radius: 25px;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+  }
+  .hero-btn:hover{
+    color: black;
+    background: aquamarine;
+    border: 1px solid aquamarine;
+    transition: 1s;
+  }
+
+
+
+  .nav-links ul li::after{ /* The "::after" is a CSS pseudo-element that is used to insert content after the content of an element like an arrow after a word to indicate that it has a dropdown menu or in this case an interactive line under list item */
+    content: '';
+    width: 0%; /* Specifiying that the block should be the FULL width of its respective list item*/
+    height: 2px; /* establishes the height of the block, its serves as an underlining so 8px will suffice*/
+    background: aqua;
+    display: block; /*establishing what to display. a literal block*/
+    margin: auto;
+    transition-duration: 0.5s;
+  }
+  .nav-links ul li:hover::after{ /*The hover pseudo element specifies what happens once i "Hover" over the element with my cursor. In this case the block width goes from 0-100%*/
+    width: 100%;
+  }
+
+
+
+
+
+
+
+
+
+
+
+  
+  nav .fa{
+    display: none;
+  }
+  
+  /*Small Device Clause*/
+  @media(max-width: 700px){ /*Code that's applicable for a device who's width is <=700px*/
+    .text-box h1{
+        font-size: 20px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: fixed; /*positions elements relative to an ancestor. generally used for pop-ups and in this case, drop down menus*/
+        background-color: violet;
+        height: 100vh;
+        width: 200px;
+        top: 0; /*offset specifications*/
+        right: -200px; /*since the mini nav bar is 200px wide, this moves it out of the screen view*/
+        text-align: left;
+        z-index: 2; /*The z index handles overlapping. The element with the highest z-index takes precendence*/
+        transition: 1s;
+    }
+    nav .fa{ /*code for the icons*/
+        display: block;
+        color: white;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    nav .fa:hover{
+    color: aqua;
+    }
+    .nav-links ul{
+      padding: 30px;
+    }
+  
+  }
+
+
+
+/*-----    PROJECTS    ------*/
+
+
+
+
+
+.projects-sec{
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(./Pictures/new-joint.png); /*the code for the background image of the home page with a black linear gradient*/
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.projects{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+}
+.projects-col{
+  flex-basis: 32%;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+.projects-col img{
+  width: 100%;
+}
+.layer{
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: .5s;
+}
+.layer:hover{
+  background: rgba(238, 11, 250, 0.75);
+}
+.layer h3{
+  width: 100%;
+  font-weight: 500;
+  color: #fff;
+  font-size: 26px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s;
+}
+.layer:hover h3{
+  bottom: 49%;
+  opacity: 1;
+}
+
+
+
+
+/*--------  SKILLS  ---------*/
+
+
+
+
+
+.interests-sec{
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(./Pictures/new-joint.png); /*the code for the background image of the home page with a black linear gradient*/
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.interests{
+  width: 80%;
+  margin: auto; /*apparently this puts it in the middle. not sure how though*/
+  text-align: center;
+  padding-top: 100px; /*this adds space from the top*/
+}
+h1{
+  font-family: 'Azonix', sans-serif;
+  font-size: 36px;
+  font-weight: 530;
+  color: #fff;
+}
+p{
+  color: white;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+}
+
+.row{
+  margin-top: 5%;
+  display: flex; /*The flex display shows all the divs horizontally next to each other*/
+  justify-content: space-between;
+}
+.interests-col{
+  flex-basis: 31%; /*This adjusts the width of the columns*/
+  background: darkcyan;
+  border-radius: 10px; /*rounds out the column boxes*/
+  margin-bottom: 5%;
+  padding: 20px 12px;
+  box-sizing: border-box;
+  transition: .5s;
+}
+h3{
+  text-align: center;
+  font-weight: 600;
+  margin: 10px 0;
+  color: #fff;
+}
+.interests-col:hover{
+  box-shadow: 0 0 50px 0px aqua;
+}
+@media(max-width: 700px){
+  .row{
+    flex-direction: column; /*Makes sure that the columns stack on top of one another on small screens*/
+  }
+}
+
+
+
+/*---------    call to action    -----------*/
+
+
+
+
+.cta-sec{
+  min-height: 60vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(./Pictures/new-joint.png); /*the code for the background image of the home page with a black linear gradient*/
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.cta{
+  margin: auto;
+  width: 80%;
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(./Pictures/ctabanner.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  text-align: center;
+  padding: 100px 0;
+}
+.cta h1{
+  color: #fff;
+  margin-bottom: 40px;
+  padding: 0;
+}
+
+@media(max-width: 700px){
+  .cta h1{
+    font-size: 24px;
+  }
+}
+
+
+
+
+/*--------      Footer     ---------*/
+
+
+.footer-sec{
+  margin: auto;
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(./Pictures/new-joint.png); /*the code for the background image of the home page with a black linear gradient*/
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.footer{
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 30px 0;
+}
+.footer h4{
+  margin-bottom: 25px;
+  margin-top: 20px;
+  font-weight: 600;
+}
+.icons .fa-brands{
+  color: hotpink;
+  margin: 0 13px;
+  cursor: pointer;
+  padding: 18px 0;
+}
+
+.fa-heart{
+  color: hotpink;
+}
+
+
+
+/*--------------     ABOUT ME page     --------------*/
+
+.about-me-sec{
+  min-height: 100vh;
+  padding-top: 50px;
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(./Pictures/new-joint.png); /*the code for the background image of the home page with a black linear gradient*/
+  background-size: cover;
+  background-position: center;
+  overflow: visible;
+}
+.sub-header{
+  min-height: 50vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(./Pictures/image1.jpeg); /*the code for the background image of the home page with a black linear gradient*/
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+}
+.sub-header h1{
+  margin-top: 100px;
+}
+.about-me{
+  width: 80%;
+  margin: auto;
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+.about-col{
+  flex-basis: 48%;
+  padding: 30px 2px;
+}
+.about-col img{
+  width: 65%;
+  border-radius: 50%;
+  border: 5px solid purple;
+  box-shadow: 0 0 2000px 0px purple;
+  box-sizing: border-box;
+}
+.about-col h1{
+  padding-top: 0;
+}
+.about-col p{
+  padding: 15px 0 25px;
+}
+.about-btn{
+  border: 2px solid hotpink;
+}
+.about-btn:hover{
+    background: orange;
+    border: 3px solid orange;
+}
+
+
+
+
+
+
+
+
+
+/*--------------     EDUCATION     --------------*/
+
+.education-sec{
+  min-height: 100vh;
+  padding-top: 50px;
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(./Pictures/new-joint.png); /*the code for the background image of the home page with a black linear gradient*/
+  background-size: cover;
+  background-position: center;
+  overflow: visible;
+}
+.sub-header{
+  min-height: 50vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(./Pictures/image1.jpeg); /*the code for the background image of the home page with a black linear gradient*/
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+}
+.sub-header h1{
+  margin-top: 100px;
+}
+.education{
+  width: 80%;
+  margin: auto;
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+.education-col{
+  flex-basis: 48%;
+  padding: 30px 2px;
+}
+.education-col img{
+  width: 65%;
+  border-radius: 50%;
+  border: 5px solid rgb(48, 0, 220);
+  box-shadow: 0 0 2000px 0px rgb(126, 128, 0);
+  box-sizing: border-box;
+}
+.education-col h1{
+  padding-top: 0;
+}
+.education-col p{
+  padding: 15px 0 25px;
+}
+.education-btn{
+  border: 2px solid hotpink;
+}
+.education-btn:hover{
+    background: orange;
+    border: 3px solid orange;
+}
+/*EDUCATION: portswigger*/
+.portswigger-col{
+  flex-basis: 48%;
+  padding: 30px 2px;
+}
+.portswigger-col img{
+  width: 68%;
+  border-radius: 50%;
+  border: 5px solid rgb(255, 255, 255);
+  box-shadow: 0 0 2000px 0px rgb(226, 75, 0);
+  box-sizing: border-box;
+}
+.portswigger-col h1{
+  padding-top: 0;
+}
+.portswigger-col p{
+  padding: 15px 0 25px;
+}
+.portswigger-btn{
+  border: 2px solid hotpink;
+}
+.portswigger-btn:hover{
+    background: orange;
+    border: 3px solid orange;
+}
+
+
+
+
+
+
+
+
+
+
+/*--------------     CONTACT ME page     --------------*/
+
+.contact-me-sec{
+  min-height: 100vh;
+  padding-top: 50px;
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(./Pictures/new-joint.png); /*the code for the background image of the home page with a black linear gradient*/
+  background-size: cover;
+  background-position: center;
+  overflow: visible;
+}
+.contact-me{
+  width: 80%;
+  margin: auto;
+}
+.contact-col{
+  flex-basis: 48%;
+  margin-bottom: 30px;
+}
+.contact-col div{
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.contact-col div .fa-solid{
+  font-size: 28px;
+  color: orange;
+  margin: 10px;
+  margin-right: 30px;
+}
+.contact-col div .fa-regular{
+  font-size: 28px;
+  color: orange;
+  margin: 10px;
+  margin-right: 30px;
+}
+.contact-col div p{
+  padding: 0;
+}
+.contact-col div h5{
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: orange;
+  font-weight: 400;
+}
+
+/*****CONTACT FORM SECTION******/
+
+.contact-col input, .contact-col textarea{
+  background-color: rgba(25, 25, 25, 0.845);
+  color: #fff;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 17px;
+  outline: none;
+  border: 1px solid #FF5349;
+  border-radius: 25px;
+}
+
+.contacted h1{
+  font-family: 'Azonix', sans-serif;
+  font-size: 36px;
+  font-weight: 530;
+  color: #fff;
+}
